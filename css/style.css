@@ -1,0 +1,667 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.portada{
+
+    width:100%;
+
+    height:100vh;
+
+    background-image:url("../img/fondo.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.55);
+
+}
+
+.contenido{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    color:white;
+
+    width:90%;
+
+    max-width:700px;
+
+}
+
+.flor{
+
+    font-size:70px;
+
+    animation:girar 6s linear infinite;
+
+}
+
+@keyframes girar{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:70px;
+
+    margin-top:20px;
+
+}
+
+h2{
+
+    margin-top:15px;
+
+    font-weight:300;
+
+}
+
+h3{
+
+    margin-top:10px;
+
+    color:#FFD54F;
+
+}
+
+p{
+
+    margin-top:35px;
+
+    font-size:20px;
+
+    line-height:35px;
+
+}
+
+button{
+
+    margin-top:45px;
+
+    background:#FFD54F;
+
+    color:#333;
+
+    border:none;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.4s;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+.bienvenida{
+    display:none;
+    width:100%;
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+/* 🌑 Fondo negro con efecto suave */
+.bienvenida::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background: radial-gradient(circle at top, #1a1a1a, #000000);
+
+    filter: blur(20px);
+    transform: scale(1.2);
+
+    z-index:0;
+}
+
+/* 💎 TARJETA PRINCIPAL (CONTENIDO) */
+.mensaje{
+    position:relative;
+    z-index:1;
+
+    max-width:700px;
+
+    background:white;   /* 👈 aquí el cambio clave */
+    color:#111;         /* 👈 texto oscuro para contraste */
+
+    padding:40px;
+    border-radius:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+/*==========================
+VISTA 3
+==========================*/
+
+.historia{
+    display:none;
+    width:100%;
+    min-height:100vh;
+
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+}
+
+/* 🌑 FONDO NEGRO */
+.historia::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background: linear-gradient(135deg, #0f0f0f, #1f1f1f, #2a2a2a);
+
+    z-index:0;
+}
+
+/* 💎 IMPORTANTE: CONTENIDO ENCIMA */
+.contenidoHistoria{
+    position:relative;
+    z-index:1;
+
+    width:90%;
+    max-width:900px;
+
+    background:white;
+    padding:50px;
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+/*======================================
+VISTA 4
+======================================*/
+
+.reencuentro{
+    display:none;
+    width:100%;
+    min-height:100vh;
+
+    background: linear-gradient(135deg, #0f0f0f, #1f1f1f, #2a2a2a);
+
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+.reencuentro img{
+    width:100%;
+    max-width:380px;   /* 👈 más controlado */
+    height:auto;
+
+    display:block;
+    margin:20px auto;
+
+    border-radius:20px;
+
+    object-fit:cover;
+}
+/* ======================================
+VISTA 5 - CANCION
+====================================== */
+
+.cancion{
+    display:none; /* oculto por defecto */
+    width:100%;
+    min-height:100vh;
+    background:linear-gradient(135deg,#111,#2c2c2c);
+    color:white;
+
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+/* CONTENEDOR */
+.contenedorCancion h1{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.contenedorCancion p{
+    margin-bottom:30px;
+}
+
+/* PORTADA */
+.portada-cancion{
+    width:260px;
+    height:260px;
+    margin:20px auto;
+    border-radius:50%;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(255,215,0,0.3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+/* ANIMACIÓN */
+@keyframes girar{
+    from{ transform:rotate(0deg); }
+    to{ transform:rotate(360deg); }
+}
+
+/* CONTROLES */
+.controles button{
+    margin:10px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* BOTONES */
+#playBtn{
+    background:#FFD54F;
+    color:#000;
+}
+
+#pauseBtn{
+    background:#444;
+    color:white;
+}
+.disco{
+    width:260px;
+    height:260px;
+    margin:20px auto;
+    border-radius:50%;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(255,215,0,0.3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.disco video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+/* ======================================
+VISTA 6 - GIRASOL FINAL
+====================================== */
+
+#girasol{
+
+    display:none;
+    width:100%;
+    min-height:100vh;
+
+    background:radial-gradient(circle,#111,#000);
+
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+}
+
+.contenedorGirasol{
+
+    max-width:700px;
+}
+
+.textoIntro{
+
+    font-size:30px;
+    margin-bottom:40px;
+}
+
+.btn-tocar{
+
+    padding:18px 45px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:22px;
+    background:#FFD54F;
+    transition:.4s;
+}
+
+.btn-tocar:hover{
+
+    transform:scale(1.1);
+}
+
+/*=======================*/
+
+.animacionGirasol{
+
+    margin-top:60px;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:1s;
+}
+
+.animacionGirasol.mostrar{
+
+    opacity:1;
+}
+
+/*=======================*/
+
+.girasolAnimado{
+
+    width:250px;
+    height:250px;
+
+    margin:auto;
+
+    position:relative;
+}
+
+/* pétalos */
+
+.petalo{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    font-size:55px;
+
+    transform:translate(-50%,-50%) scale(.2);
+
+    opacity:0;
+
+    transition:1.3s;
+}
+
+/* centro */
+
+.centro{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    font-size:60px;
+
+    z-index:50;
+}
+
+/*======================*/
+/* POSICIONES ABIERTAS */
+/*======================*/
+
+.animacionGirasol.mostrar .p1{
+
+    transform:translate(-50%,-130px) scale(1);
+    opacity:1;
+}
+
+.animacionGirasol.mostrar .p2{
+
+    transform:translate(55px,-90px) scale(1) rotate(45deg);
+    opacity:1;
+}
+
+.animacionGirasol.mostrar .p3{
+
+    transform:translate(90px,-10px) scale(1) rotate(90deg);
+    opacity:1;
+}
+
+.animacionGirasol.mostrar .p4{
+
+    transform:translate(55px,70px) scale(1) rotate(135deg);
+    opacity:1;
+}
+
+.animacionGirasol.mostrar .p5{
+
+    transform:translate(-50%,90px) scale(1) rotate(180deg);
+    opacity:1;
+}
+
+.animacionGirasol.mostrar .p6{
+
+    transform:translate(-160px,70px) scale(1) rotate(225deg);
+    opacity:1;
+}
+
+.animacionGirasol.mostrar .p7{
+
+    transform:translate(-200px,-10px) scale(1) rotate(270deg);
+    opacity:1;
+}
+
+.animacionGirasol.mostrar .p8{
+
+    transform:translate(-160px,-90px) scale(1) rotate(315deg);
+    opacity:1;
+}
+
+/*======================*/
+
+.mensajeFinal{
+
+    margin-top:40px;
+
+    font-size:28px;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s;
+
+    transition-delay:1.5s;
+}
+
+.firma{
+
+    margin-top:30px;
+
+    font-size:22px;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s;
+
+    transition-delay:2.2s;
+}
+
+.firma span{
+
+    display:block;
+
+    margin-top:15px;
+
+    color:#FFD54F;
+}
+
+/* aparece al final */
+
+.animacionGirasol.mostrar .mensajeFinal,
+.animacionGirasol.mostrar .firma{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* ======================================
+responsive
+====================================== */
+@media (max-width: 992px){
+
+    h1{
+        font-size:45px;
+    }
+
+    .contenidoHistoria,
+    .mensaje{
+        padding:30px;
+    }
+
+    p{
+        font-size:18px;
+        line-height:30px;
+    }
+
+    .disco{
+        width:220px;
+        height:220px;
+    }
+}
+@media (max-width: 576px){
+
+    h1{
+        font-size:32px;
+    }
+
+    h2{
+        font-size:18px;
+    }
+
+    p{
+        font-size:16px;
+        line-height:26px;
+    }
+
+    .contenidoHistoria,
+    .mensaje{
+        padding:20px;
+        width:90%;
+    }
+
+    .disco{
+        width:180px;
+        height:180px;
+    }
+
+    button{
+        width:100%;
+        margin-top:20px;
+        padding:14px;
+        font-size:16px;
+    }
+
+    /* 🖼️ IMAGEN REENCUENTRO */
+    .reencuentro img{
+        max-width:260px;
+        width:100%;
+        height:auto;
+        display:block;
+        margin:20px auto;
+    }
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+.btn-home{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:99999;
+
+    font-size:45px;   /* 👈 más grande */
+    cursor:pointer;
+
+    background:rgba(255,255,255,0.15);
+    padding:14px 18px; /* 👈 más espacio */
+    border-radius:14px;
+
+    backdrop-filter:blur(8px);
+
+    transition:.3s;
+}
+
+.btn-home:hover{
+    transform:scale(1.15);
+    background:#FFD54F;
+}
